@@ -7,16 +7,17 @@ class VegetablesController < ApplicationController
   def new
     render "new.html.erb"
     # all I want to do is render the form - the user inputs the data here
-    # actual creation of new instance doesn't happen until create method below
+    # actual creation of new instance doesn't happen until create method below (when the submit button is clicked on the form)
   end
 
   def create
+    # note vegetable isn't an instance variable in this cases
     vegetable = Vegetable.new(
       name: params[:name],
       color: params[:color],
       delicious: params[:delicious]
       )
-    # pull from each param entry
+    # pull from each param entries
     vegetable.save
     # save and send us back to the main page
     redirect_to "/vegetables"
@@ -31,6 +32,9 @@ class VegetablesController < ApplicationController
   end
 
   def edit
+    vegetable_id = params[:id]
+    @vegetable = Vegetable.find_by(id: vegetable_id)
+    render "edit.html.erb"
   end
 
   def update

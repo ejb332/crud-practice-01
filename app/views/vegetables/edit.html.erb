@@ -16,7 +16,9 @@
   <div class="">
     <%= submit_tag "Edit" %>
   </div>
+<% end %>
+<%= form_tag "/vegetables", method: :get do %>
   <div class="">
-    <a href="/vegetables">Cancel</a>
+    <button href="/vegetables">Cancel</button>
   </div>
 <% end %>
