@@ -1,0 +1,22 @@
+<h1>Edit Vegetable</h1>
+<%= form_tag "/vegetables", method: :patch do %>
+  <div class="">
+    <%= label_tag :name %>
+    <!-- empty string is for placeholder in text input box -->
+    <%= text_field_tag :name, "#{@vegetable.name}" %>
+  </div>
+  <div class="">
+    <%= label_tag :color %>
+    <%= text_field_tag :color, "#{@vegetable.color}" %>
+  </div>
+  <div class="">
+    <%= label_tag :delicious %>
+    <%= text_field_tag :delicious, "#{@vegetable.delicious}" %>
+  </div>
+  <div class="">
+    <%= submit_tag "Edit" %>
+  </div>
+  <div class="">
+    <a href="/vegetables">Cancel</a>
+  </div>
+<% end %>

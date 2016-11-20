@@ -1,0 +1,6 @@
+<h1>Look - veggies!</h1>
+<% @vegetables.each do |vegetable| %>
+  <h2><%= vegetable.name.capitalize %></h2>
+  <p>Color: <%= vegetable.color.capitalize %></p>
+  <p><b>Delicious?</b> <%= vegetable.delicious %></p>
+<% end %>

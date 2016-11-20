@@ -1,0 +1,22 @@
+<h1>Add Vegetable</h1>
+<%= form_tag "/vegetables", method: :post do %>
+  <div class="">
+    <%= label_tag :name %>
+    <!-- empty string is for placeholder in text input box -->
+    <%= text_field_tag :name, "" %>
+  </div>
+  <div class="">
+    <%= label_tag :color %>
+    <%= text_field_tag :color, "" %>
+  </div>
+  <div class="">
+    <%= label_tag :delicious %>
+    <%= text_field_tag :delicious, "" %>
+  </div>
+  <div class="">
+    <%= submit_tag "Add" %>
+  </div>
+  <div class="">
+    <button href="/vegetables">Back</button>
+  </div>
+<% end %>
